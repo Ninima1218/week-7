@@ -1,0 +1,150 @@
+header {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "logo title menu menu";
+    justify-content: space-between;
+    width: 100%;
+    height: 20vh;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "big_title big_title discover discover"
+    "div_img div_img div_img div_img";
+    width: 100vw;
+    height: 80vh;
+}
+
+.logo {
+    grid-area: logo;
+    width: 30px;
+
+}
+
+.title {
+    grid-area: title;
+    grid-column-start: 2;
+    font-size: larger;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.menu {
+    grid-area: menu;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: space-between;
+    gap: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.burger_menu {
+    display: none;
+}
+
+.big_title {
+    grid-area: big_title;
+    font-size: 60px;
+    font-weight: bolder;
+    width: 100px;
+}
+
+.discover {
+    grid-area: discover;
+    font-size: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.discover button {
+    width: 150px;
+    border-color: red;
+}
+
+div img {
+    grid-area: div_img;
+    width: 1000px;
+    height: 70vh;
+}
+
+@media screen and (max-width: 399px){
+    .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "logo title menu";
+    justify-content: space-between;
+    width: 100%;
+    height: 20vh;
+    }
+
+    .menu span {
+    display: none;
+    }
+
+    .burger_menu {
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+    }
+
+    main .img {
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 400px){
+    .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "logo title menu";
+    justify-content: space-between;
+    width: 100%;
+    height: 20vh;
+}
+
+.menu {
+    grid-area: menu;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: space-between;
+    gap: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: auto;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "big_title discover"
+    "div_img div_img";
+    width: 100%;
+    height: 80vh;
+}
+
+.big_title {
+    grid-area: big_title;
+    font-size: 3em;
+    font-weight: bolder;
+    min-width: 50px;
+}
+
+main .img {
+    width: auto;
+}
+
+.discover {
+    grid-area: discover;
+    font-size: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 80%;
+}
+}
